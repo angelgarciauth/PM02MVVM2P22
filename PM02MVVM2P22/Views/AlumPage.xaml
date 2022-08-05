@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vo="clr-namespace:PM02MVVM2P22.ViewModels"
+             x:Class="PM02MVVM2P22.Views.AlumPage">
+
+    <ContentPage.BindingContext>
+        <vo:AlumnosViewModels/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Nombres "/>
+                <Entry Grid.Row="0" Grid.Column="1" Text="{Binding nombres}"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Apellidos "/>
+                <Entry Grid.Row="1" Grid.Column="1" Text="{Binding apellidos}"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Apellidos "/>
+                <Entry Grid.Row="2" Grid.Column="1" Text="{Binding genero}"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Apellidos "/>
+                <Entry Grid.Row="3" Grid.Column="1" Text="{Binding direccion}"/>
+
+
+                <Button Grid.Row="4" Grid.Column="0" Text="Agregar" Command="{Binding CleanCommand}"/>
+                <Button Grid.Row="4" Grid.Column="1" Text="Limpiar" Command="{Binding CleanCommand}"/>
+
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

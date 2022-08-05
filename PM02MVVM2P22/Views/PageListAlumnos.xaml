@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:PM02MVVM2P22.Views"
+             x:Class="PM02MVVM2P22.Views.PageListAlumnos">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Obtener Lista Alumnos"
+                    Command="{Binding DetallesCommand}"
+                    CommandParameter="{x:Type local:AlumPage}"/>
+
+            <ListView ItemsSource="{Binding GetListAlumnos}"
+                      SelectedItem="{Binding GetAlumno}">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding nombres}"
+                                  Detail="{Binding apellidos}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
